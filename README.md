@@ -1,5 +1,6 @@
 # GDScript AGILE Board
  An AGILE board made in gdscript
+ <img src="icon.png">
  
  ## What is AGILE development?
  Agile is an iterative approach to project management and software development that helps teams deliver value to their customers faster and with fewer headaches. Instead of betting everything on a "big bang" launch, an agile team delivers work in small, but consumable, increments. This board was intended to be used by a solo developer rather than a team but can easily have team member assignment added in.
