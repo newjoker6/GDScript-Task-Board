@@ -6,20 +6,20 @@
 
 
  ## Board Features
-<UL>
-Add tasks
-Delete tasks
-Give tasks a level of importance
-Move tasks around on the board to represent it's status
-Create new boards
-Name, Save and Load boards
-Leave important notes for each task
-</UL>
+
+- Add tasks
+- Delete tasks
+- Give tasks a level of importance
+- Move tasks around on the board to represent it's status
+- Create new boards
+- Name, Save and Load boards
+- Leave important notes for each task
+
 
 <img src="images/Full-Board.png">
 Add new tasks to the board and give it an importance level.
 <img src="images/New-Task.png">
-Left click any task to get a popup box where you can put any notes or client requirements/restrictions related to said task.
+Left click any task to get a popup box where you can put any notes or client requirements/restrictions related to said task. Right click the same task to hide this menu.
 <img src="images/Requirements-Box.png">
 Right click on any task to be able to delete a task or change its position on the board.
 <img src="images/Right-Click-Menu.png">
