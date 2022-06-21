@@ -13,11 +13,17 @@ config_version=4
 config/name="SCRUM Board"
 run/main_scene="res://Scenes/Main.tscn"
 config/use_custom_user_dir=true
+boot_splash/image="res://icon.png"
 config/icon="res://icon.png"
 
 [autoload]
 
 Global="*res://Scripts/Global.gd"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [editor_plugins]
 
