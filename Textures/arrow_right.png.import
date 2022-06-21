@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/arrow_right.png-a2d8173339bddc685afe363c66d229a8.image"
+
+[deps]
+
+source_file="res://Textures/arrow_right.png"
+dest_files=[ "res://.import/arrow_right.png-a2d8173339bddc685afe363c66d229a8.image" ]
+
+[params]
+

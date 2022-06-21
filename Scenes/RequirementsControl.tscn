@@ -1,0 +1,17 @@
+[gd_scene format=2]
+
+[node name="RequirementsControl" type="Control"]
+margin_right = 192.0
+margin_bottom = 104.0
+
+[node name="CloseButton" type="Button" parent="."]
+margin_left = 136.0
+margin_top = 112.0
+margin_right = 183.0
+margin_bottom = 132.0
+text = "Close"
+
+[node name="Requirements" type="TextEdit" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+caret_blink = true
