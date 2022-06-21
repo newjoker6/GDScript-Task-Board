@@ -20,7 +20,7 @@ Leave important notes for each task
 Add new tasks to the board and give it an importance level.
 <img src="images/New-Task.png">
 Left click any task to get a popup box where you can put any notes or client requirements/restrictions related to said task.
-<img src="images/Requirements-Board.png">
+<img src="images/Requirements-Box.png">
 Right click on any task to be able to delete a task or change its position on the board.
 <img src="images/Right-Click-Menu.png">
 Search or filter through your board for specific tasks.
