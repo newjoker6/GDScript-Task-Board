@@ -1,5 +1,5 @@
 # GDScript AGILE Board
- An AGILE board made in gdscript
+ An AGILE board made in gdscript \n
  <img src="icon.png">
  
  ## What is AGILE development?
