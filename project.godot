@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="SCRUM Board"
+config/name="Task Board"
 run/main_scene="res://Scenes/Main.tscn"
 config/use_custom_user_dir=true
 boot_splash/image="res://icon.png"
