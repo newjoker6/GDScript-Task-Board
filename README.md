@@ -28,7 +28,9 @@ Right click on any task to be able to delete a task or move its position on the 
 Search or filter through your board for specific tasks.
 <img src="images/Search-Board.png">
 Avoid Scope Creep by getting a realistic idea of how long your project will take based on yoru estimates as well as see how far along you are in your project.
+<p align = "center">
 <img src="images/Task-Split-and-Estimate.png">
+</p>
 
 ## Known Issues
 None.
