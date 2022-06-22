@@ -123,6 +123,10 @@ margin_bottom = 20.0
 margin_right = 20.0
 margin_bottom = 20.0
 
+[node name="ImportanceMenu" type="PopupMenu" parent="PopupMenu"]
+margin_right = 20.0
+margin_bottom = 20.0
+
 [node name="ImportanceIcon" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -130,6 +134,25 @@ margin_left = 168.0
 margin_top = 80.0
 margin_right = -8.0
 margin_bottom = -8.0
+
+[node name="AssignedUser" type="Label" parent="."]
+margin_left = 8.0
+margin_top = 80.0
+margin_right = 160.0
+margin_bottom = 94.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 2
+clip_text = true
+
+[node name="NewName" type="LineEdit" parent="."]
+visible = false
+margin_left = 8.0
+margin_top = 32.0
+margin_right = 176.0
+margin_bottom = 56.0
+placeholder_text = "Assign Name..."
+caret_blink = true
 
 [node name="RequirementsControl" parent="." instance=ExtResource( 2 )]
 visible = false

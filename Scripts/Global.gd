@@ -36,5 +36,8 @@ func store_data(list:Array, boardname:String):
 				Data[child]["Task"] = child.TaskTitle.text
 				Data[child]["ImportanceLevel"] = child.ImportanceLevel
 				Data[child]["TaskRequirements"] = child.TaskRequirements
+				Data[child]["AssignedName"] = child.AssignedName
+				Data[child]["TaskLength"] = child.TaskLength
+				
 	
 	save_data(boardname)

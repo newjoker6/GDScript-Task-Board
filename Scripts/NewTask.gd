@@ -5,10 +5,14 @@ onready var TaskTitle = $TaskTitle
 onready var TaskBack = $TaskBack
 onready var PopUpMenu = $PopupMenu
 onready var MoveTaskMenu = $PopupMenu/MoveTaskMenu
+onready var ImportanceMenu = $PopupMenu/ImportanceMenu
 onready var ImportanceIcon = $ImportanceIcon
 onready var CloseButton = $RequirementsControl/CloseButton
 onready var RequirementsControl = $RequirementsControl
 onready var RequirementsText = $RequirementsControl/Requirements
+onready var AssignedUser = $AssignedUser
+onready var NewName = $NewName
+
 
 export var canimage: ImageTexture
 export var rightarrow: ImageTexture
@@ -22,6 +26,8 @@ var PriorityLevel: int
 var MouseEnter: bool = false
 var ImportanceLevel: int
 var TaskRequirements: String
+var AssignedName:String = ""
+var TaskLength:int
 
 enum Priority {
 	TODO,
@@ -48,7 +54,16 @@ func connect_signals():
 	TaskBack.connect("mouse_exited", self, "_on_mouse_exited")
 	PopUpMenu.connect("index_pressed", self, "_on_menu_index_pressed")
 	MoveTaskMenu.connect("index_pressed", self, "_on_task_menu_index_pressed")
+	ImportanceMenu.connect("index_pressed", self, "_on_importance_menu_index_pressed")
 	CloseButton.connect("pressed", self, "_on_close_button_pressed")
+	NewName.connect("text_entered", self, "_on_new_name_text")
+
+
+func _on_new_name_text(new_text):
+	AssignedName = new_text
+	AssignedUser.text = new_text
+	NewName.clear()
+	NewName.hide()
 
 
 func _on_close_button_pressed():
@@ -77,8 +92,22 @@ func set_importance_icon(level:int):
 			ImportanceIcon.texture = medimp
 		2:
 			ImportanceIcon.texture = highimp
+
+
+func _on_importance_menu_index_pressed(idx):
+	var selection = ImportanceMenu.get_item_text(idx)
+	match selection:
 		
+		"High":
+			self.ImportanceLevel = Importance.HIGH
+			
+		"Medium":
+			self.ImportanceLevel = Importance.MEDIUM
 		
+		"Low":
+			self.ImportanceLevel = Importance.LOW
+	
+	set_importance_icon(ImportanceLevel)
 
 
 func _input(_event):
@@ -93,11 +122,17 @@ func _input(_event):
 
 
 func add_menu_items():
-	PopUpMenu.add_icon_item(canimage, "Delete")
+	PopUpMenu.add_item("Reassign User")
 	PopUpMenu.add_submenu_item("Move Task","MoveTaskMenu")
+	PopUpMenu.add_submenu_item("Importance    ","ImportanceMenu")
+	PopUpMenu.add_icon_item(canimage, "Delete")
 
 	MoveTaskMenu.add_icon_item(rightarrow, "Advance Task")
 	MoveTaskMenu.add_icon_item(leftarrow, "Retreat Task")
+	
+	ImportanceMenu.add_icon_item(highimp, "High")
+	ImportanceMenu.add_icon_item(medimp, "Medium")
+	ImportanceMenu.add_icon_item(lowimp, "Low")
 
 
 func _on_menu_index_pressed(idx):
@@ -107,6 +142,10 @@ func _on_menu_index_pressed(idx):
 		
 		"Delete":
 			delete_task()
+		
+		"Reassign User":
+			NewName.show()
+			NewName.grab_focus()
 
 
 func create_texture(image_path):

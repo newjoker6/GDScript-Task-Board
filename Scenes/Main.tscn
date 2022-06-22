@@ -1,7 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Footer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Fonts/ColumnFont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Fonts/heebo.regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=16]
+size = 12
+font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 content_margin_left = 10.0
@@ -36,6 +42,10 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="DynamicFont" id=17]
+size = 12
+font_data = ExtResource( 4 )
+
 [sub_resource type="StyleBoxFlat" id=5]
 content_margin_left = 10.0
 content_margin_right = 10.0
@@ -46,6 +56,10 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="DynamicFont" id=18]
+size = 12
+font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.803922, 0.721569, 1, 1 )
@@ -86,6 +100,7 @@ corner_radius_bottom_left = 10
 expand_margin_top = 20.0
 
 [sub_resource type="Theme" id=2]
+Button/fonts/font = SubResource( 16 )
 Button/styles/hover = SubResource( 4 )
 Button/styles/normal = SubResource( 1 )
 Button/styles/pressed = SubResource( 3 )
@@ -98,7 +113,7 @@ LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
 LineEdit/colors/font_color_uneditable = Color( 0, 0, 0, 1 )
 LineEdit/colors/selection_color = Color( 0.803922, 0.721569, 1, 1 )
 LineEdit/constants/minimum_spaces = 0
-LineEdit/fonts/font = null
+LineEdit/fonts/font = SubResource( 17 )
 LineEdit/icons/clear = null
 LineEdit/styles/focus = null
 LineEdit/styles/normal = SubResource( 5 )
@@ -110,7 +125,7 @@ PopupMenu/colors/font_color_hover = Color( 0, 0, 0, 1 )
 PopupMenu/colors/font_color_separator = Color( 0, 0, 0, 1 )
 PopupMenu/constants/hseparation = 10
 PopupMenu/constants/vseparation = 10
-PopupMenu/fonts/font = null
+PopupMenu/fonts/font = SubResource( 18 )
 PopupMenu/icons/checked = null
 PopupMenu/icons/radio_checked = null
 PopupMenu/icons/radio_unchecked = null
@@ -125,6 +140,24 @@ PopupMenu/styles/separator = null
 TextEdit/styles/normal = SubResource( 9 )
 WindowDialog/colors/title_color = Color( 0.12549, 0.12549, 0.12549, 1 )
 WindowDialog/styles/panel = SubResource( 8 )
+
+[sub_resource type="DynamicFont" id=15]
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.662745, 1, 0.67451, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.439216, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.839216, 0.662745, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.662745, 0.705882, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 1, 0.662745, 0.662745, 1 )
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -160,7 +193,7 @@ placeholder_text = "Task Search.."
 
 [node name="AddTaskButton" type="Button" parent="HBoxContainer"]
 margin_left = 842.0
-margin_right = 919.0
+margin_right = 913.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 70, 0 )
 text = "Add Task"
@@ -175,37 +208,41 @@ margin_bottom = -483.0
 custom_constants/separation = 10
 
 [node name="ToDoLabel" type="Label" parent="LabelContainer"]
-margin_top = 13.0
+margin_top = 8.0
 margin_right = 225.0
-margin_bottom = 27.0
+margin_bottom = 32.0
 rect_min_size = Vector2( 225, 0 )
+custom_fonts/font = ExtResource( 3 )
 text = "TODO"
 align = 1
 
 [node name="ProgressLabel" type="Label" parent="LabelContainer"]
 margin_left = 235.0
-margin_top = 13.0
+margin_top = 8.0
 margin_right = 460.0
-margin_bottom = 27.0
+margin_bottom = 32.0
 rect_min_size = Vector2( 225, 0 )
+custom_fonts/font = ExtResource( 3 )
 text = "IN PROGRESS"
 align = 1
 
 [node name="ReviewLabel" type="Label" parent="LabelContainer"]
 margin_left = 470.0
-margin_top = 13.0
+margin_top = 8.0
 margin_right = 695.0
-margin_bottom = 27.0
+margin_bottom = 32.0
 rect_min_size = Vector2( 225, 0 )
+custom_fonts/font = ExtResource( 3 )
 text = "REVIEW/TESTING"
 align = 1
 
 [node name="DoneLabel" type="Label" parent="LabelContainer"]
 margin_left = 705.0
-margin_top = 13.0
+margin_top = 8.0
 margin_right = 930.0
-margin_bottom = 27.0
+margin_bottom = 32.0
 rect_min_size = Vector2( 225, 0 )
+custom_fonts/font = ExtResource( 3 )
 text = "COMPLETED"
 align = 1
 
@@ -289,7 +326,6 @@ custom_constants/separation = 130
 margin_right = 0.0
 
 [node name="NewTaskPopUp" type="WindowDialog" parent="."]
-visible = true
 margin_left = 352.0
 margin_top = 224.0
 margin_right = 672.0
@@ -298,9 +334,9 @@ margin_bottom = 464.0
 [node name="NewTaskText" type="LineEdit" parent="NewTaskPopUp"]
 anchor_right = 1.0
 margin_left = 32.0
-margin_top = 72.0
+margin_top = 32.0
 margin_right = -32.0
-margin_bottom = 96.0
+margin_bottom = 66.0
 placeholder_text = "New Task..."
 caret_blink = true
 
@@ -310,17 +346,31 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -96.0
-margin_top = -36.0
-margin_right = -34.0
+margin_top = -40.0
+margin_right = -26.0
 margin_bottom = -16.0
 text = "Confirm"
+
+[node name="AssignName" type="LineEdit" parent="NewTaskPopUp"]
+margin_left = 32.0
+margin_top = 136.0
+margin_right = 288.0
+margin_bottom = 170.0
+placeholder_text = "Assign Name..."
+
+[node name="EstTime" type="LineEdit" parent="NewTaskPopUp"]
+margin_left = 32.0
+margin_top = 184.0
+margin_right = 160.0
+margin_bottom = 218.0
+placeholder_text = "est time minutes..."
 
 [node name="ImportanceOptions" type="OptionButton" parent="NewTaskPopUp"]
 anchor_right = 1.0
 margin_left = 32.0
-margin_top = 136.0
+margin_top = 88.0
 margin_right = -32.0
-margin_bottom = 156.0
+margin_bottom = 112.0
 custom_constants/arrow_margin = 5
 align = 1
 
@@ -332,10 +382,10 @@ margin_bottom = 572.0
 text = "Store Data"
 
 [node name="NewBoardButton" type="Button" parent="."]
-margin_left = 776.0
-margin_top = 552.0
-margin_right = 857.0
-margin_bottom = 572.0
+margin_left = 872.0
+margin_top = 504.0
+margin_right = 970.0
+margin_bottom = 538.0
 text = "New Board"
 
 [node name="LoadBoardButton" type="Button" parent="."]
@@ -346,11 +396,82 @@ margin_bottom = 572.0
 text = "Load Board"
 
 [node name="FileDialog" type="FileDialog" parent="."]
-margin_right = 448.0
-margin_bottom = 288.0
+visible = true
+margin_left = 96.0
+margin_top = 96.0
+margin_right = 824.0
+margin_bottom = 424.0
 window_title = "Open a File"
 mode = 0
 access = 1
 filters = PoolStringArray( "*.json" )
 current_dir = "user://"
 current_path = "user://"
+
+[node name="EstimatedTime" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -138.5
+margin_top = -40.0
+margin_right = 138.5
+margin_bottom = -26.0
+custom_fonts/font = SubResource( 15 )
+text = "Total Estimated Project Time: 00:00 - 00:00"
+
+[node name="CompleteBar" type="ProgressBar" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -228.0
+margin_top = -72.0
+margin_right = 228.0
+margin_bottom = -58.0
+custom_styles/fg = SubResource( 10 )
+custom_styles/bg = SubResource( 11 )
+value = 100.0
+percent_visible = false
+
+[node name="TestingBar" type="ProgressBar" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -228.0
+margin_top = -72.0
+margin_right = 228.0
+margin_bottom = -58.0
+custom_styles/fg = SubResource( 12 )
+custom_styles/bg = SubResource( 11 )
+value = 60.0
+percent_visible = false
+
+[node name="InProgressBar" type="ProgressBar" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -228.0
+margin_top = -72.0
+margin_right = 228.0
+margin_bottom = -58.0
+custom_styles/fg = SubResource( 13 )
+custom_styles/bg = SubResource( 11 )
+value = 40.0
+percent_visible = false
+
+[node name="ToDoBar" type="ProgressBar" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -228.0
+margin_top = -72.0
+margin_right = 228.0
+margin_bottom = -58.0
+custom_styles/fg = SubResource( 14 )
+custom_styles/bg = SubResource( 11 )
+value = 20.0
+percent_visible = false
